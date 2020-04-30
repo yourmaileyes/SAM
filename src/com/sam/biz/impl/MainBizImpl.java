@@ -55,4 +55,5 @@ public class MainBizImpl implements MainBiz {
         activityExample.createCriteria().andStatusGreaterThanOrEqualTo(1);
         return activityMapper.selectByExample(activityExample);
     }
+
 }

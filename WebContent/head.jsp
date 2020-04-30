@@ -20,14 +20,14 @@
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					<img alt="" src="images/title.bmp" onclick="window.location.href='index.do'"/> 
+					<img alt="" src="images/title.png" onclick="window.location.href='index.do'"/>
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 					    <c:if test="${loginUser==null }">
 						<li>
-							 <a href="login.jsp">登录注册</a>
+							 <a href="login.jsp">登录</a>
 						</li>
 						</c:if>
 						<c:if test="${loginUser!=null }">
@@ -38,7 +38,7 @@
 									 <a href="info.do">个人中心</a>
 								</li>
 								<li>
-									 <a href="mytest.do">我的测评</a>
+									 <a href="mytest.do">我的报名</a>
 								</li>
 								
 								<li class="divider">

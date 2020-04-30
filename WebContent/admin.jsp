@@ -12,7 +12,7 @@
 <script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
 	src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<title>ckew后台管理页面</title>
+<title>SAM后台管理页面</title>
 </head>
 <body>
 <div class="container">

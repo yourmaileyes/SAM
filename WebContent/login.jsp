@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html >
 <head>
-<title>ckew登录</title>
+<title>SAM登录</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/course.css">
@@ -24,19 +24,21 @@
 	</div>
 	<!-- uiView:  -->
 	<div data-ui-view="" class="container">
-	<nav class="navbar navbar-default" role="navigation"
-					style="border: 0px solid transparent !important;">
-				<ul class="nav navbar-nav" style="width: auto; margin-left: 490px;">
-					<li class="active"><a href="#" style="font-size: 20px;">登录</a></li>
-					<li><a href="regist.jsp" style="font-size: 20px;">注册</a></li>
 
-				</ul>
-				</nav>
 
 
 	<div class="container-fluid full ">
 	<form id="login1" action="login.do" method="post" 
 						class="form col-md-4 col-md-offset-4 ">
+		<div class="form-group" >
+			<label for="type" class="col-md-3 control-label">角色</label>
+			<select id="type" name="type"
+				   class="form-control input-lg" placeholder="用户名">
+				<option selected="selected" value="1">学生</option>
+				<option value="2">组织</option>
+				<option value="3">管理员</option>
+			</select>
+		</div>
 						<label for="username" class="col-md-3 control-label">用户名</label>
 						<div class="form-group" >
 							<input id="username" name="username" type="text"
@@ -139,7 +141,8 @@
 							url : "passwordcheck.do",
 							data : {
 								"username" : username,
-								"password" : password
+								"password" : password,
+								"type" : 1
 							},
 							async : false,
 							dataType : 'text',
@@ -187,7 +190,7 @@
 	
 	<footer style="text-align: center">
     <hr>
-<p class="am-padding-left">© 2018 <a href="#">山西农业大学北京海淀基地</a>. 作者:于斌</p>
+<p class="am-padding-left">© 2020 <a href="#">山西大学商务学院</a>. 作者:解子扬</p>
 </footer>
 
 
