@@ -83,7 +83,7 @@
 	<footer style="text-align: center">
 	<hr>
 	<p class="am-padding-left">
-		© 2018 <a href="#">山西农业大学北京海淀基地</a>. 作者:于斌
+		© 2020 <a href="#">山西大学商务学院</a>. 作者:解子扬
 	</p>
 	</br>
 	</br>

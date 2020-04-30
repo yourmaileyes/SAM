@@ -1,76 +1,162 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>计算机基础知识测评</title>
+<link href="favicon.ico" rel="icon" type="image/x-icon" />
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<script src="js/jquery-3.2.1.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<script type="text/javascript" src="js/banner.js"></script>
+<script type="text/javascript" src="js/ad.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>大学艺术活动网站</title>
+<style type="text/css">
+body {
+	background-color: #f5f5f5;
+	padding-left: 0px;
+}
+
+#contents {
+	background-color: #FFF;
+	padding-left: 20px;
+}
+</style>
 </head>
-<body>
-	<%@include file="head.jsp"%>
-<div class="container">
+<%@include file="head.jsp"%>
+<div class="container" style="margin-top: 5%">
 	<div class="row clearfix">
-		<div class="col-md-8 column">
-			<div class="carousel slide" id="carousel-168735">
-				<ol class="carousel-indicators">
-					<li class="active" data-slide-to="0" data-target="#carousel-168735">
-					</li>
-					<li data-slide-to="1" data-target="#carousel-168735">
-					</li>
-					<li data-slide-to="2" data-target="#carousel-168735">
-					</li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="item active">
-						<img alt="" src="images/main0.jpg" />
-						<div class="carousel-caption">
-							<h4>
-								计算机基础知识测评
-							</h4>
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="carousel slide" id="carousel-624135">
+						<ol class="carousel-indicators">
+							<li class="active" data-slide-to="0"
+								data-target="#carousel-624135"></li>
+							<li data-slide-to="1" data-target="#carousel-624135"></li>
+							<li data-slide-to="2" data-target="#carousel-624135"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<img alt="" src="images/2.jpg" width="100%"
+									height="300px" />
+								<div class="carousel-caption">
+									<h4>
+										<!-- First Thumbnail label -->
+									</h4>
+									<p>
+										<!-- Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. -->
+									</p>
+								</div>
+							</div>
+							<div class="item">
+								<img alt="" src="images/1.jpg" width="100%"
+									height="300px" />
+								<div class="carousel-caption">
+									<h4>
+										<!-- Second Thumbnail label -->
+									</h4>
+									<p>
+										<!-- Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+									 -->
+									</p>
+								</div>
+							</div>
+							<div class="item">
+								<img alt="" src="images/3.jpg" width="100%"
+									height="300px" />
+								<div class="carousel-caption">
+									<h4>
+										<!-- Third Thumbnail label -->
+									</h4>
+									<p>
+										<!-- Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+									 -->
+									</p>
+								</div>
+							</div>
+						</div>
+						<a class="left carousel-control" href="#carousel-624135"
+							data-slide="prev"><span
+							class="glyphicon glyphicon-chevron-left"></span></a> <a
+							class="right carousel-control" href="#carousel-624135"
+							data-slide="next"><span
+							class="glyphicon glyphicon-chevron-right"></span></a>
+					</div>
+					<div class="uc-course-list_content">
+
+						<ul class="uc-course-list_ul">
+							<!--Regular list-->
+							<c:forEach var="course" items="${activities}" varStatus="status">
+
+								<li class="uc-course-list_itm f-ib">
+									<!--Regular if23-->
+									<div class="uc-coursecard uc-ykt-coursecard f-fl">
+										<a target="_blank" class="j-href" href="activity.do?id=${course.id}">
+											<div class="uc-ykt-coursecard-wrap f-cb f-pr">
+												<div class="uc-ykt-coursecard-wrap_box">
+													<div class="uc-ykt-coursecard-wrap_picbox f-pr">
+														<img class="imgPic j-img" src="<c:url value="images/${course.imgurl}?imageView&amp;thumbnail=223y124&amp;quality=100"/>" data-src="" alt="课程图片" >
+														<div class="m-showLectorTag f-pa" style="display: none;">老师参与</div>
+													</div>
+													<div class="uc-ykt-coursecard-wrap_tit">
+														<h3 class="">${course.name}</h3>
+													</div>
+													<div class="uc-ykt-coursecard-wrap_orgName f-fs0 f-thide">
+															${course.context}</div>
+													<div class="uc-ykt-coursecard-wrap_scorewrap f-thide f-cb f-pa">
+														<div class="m-scorecnt f-fl f-cb">
+															<div class="uc-starrating">
+															${course.number}人报名
+															</div>
+														</div>
+														<div class="m-hot f-fl">
+															<!--Regular if24-->
+															活动时间<fmt:formatDate value="${course.starttime}" pattern="yyyy-MM-dd"/>
+															-<fmt:formatDate value="${course.endtime}" pattern="yyyy-MM-dd"/>
+
+														</div>
+													</div>
+													<div class="uc-ykt-coursecard-wrap_price f-pa">
+														<!--Regular if25-->
+														<span class="u-free">
+
+															<br><c:if test="${course.status==4 }">已结束</c:if>
+															</span>
+
+													</div>
+													<!--Regular if26-->
+												</div>
+											</div>
+										</a>
+									</div>
+
+								</li>
+							</c:forEach>
+						</ul>
+						<!--Regular if22-->
+					</div>
 						</div>
 					</div>
-					<div class="item">
-						<img alt="" src="images/main1.jpg" />
-						<div class="carousel-caption">
-							<h4>
-								快来和我一起测评吧！
-							</h4>
-						</div>
-					</div>
-					<div class="item">
-						<img alt="" src="images/main2.jpg" />
-						<div class="carousel-caption">
-							<h4>
-								带你进入计算机的世界
-							</h4>
-						</div>
-					</div>
-				</div> <a class="left carousel-control" href="#carousel-168735" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-168735" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
 			</div>
-		</div>
-		<div class="col-md-4 column">
-			<div class="jumbotron">
-				<h3>
-					计算机基础知识测评入口
-				</h3>
-				<p>计算机基础知识测评以基础知识为切入点，结合国内外创新素养理论研究和实践探索的前沿经验，致力于通过客观的测量方法与科学的评价体系，打破教育资源不均衡对人才培育的桎梏，充分发掘学生的创新潜能，选拔出一批基础知识扎实、创新能力突出、综合素质全面的优秀中学生，为一流大学的人才选拔提供科学参考。 </p>
-				<p>
-					 <a class="btn btn-primary btn-large" href="examshow.do">立马去测评！</a>
-				</p>
-			</div>
+			<img alt="140x140" src="style/image/bottom.JPG" />
 		</div>
 	</div>
 </div>
 <footer style="text-align: center">
 <hr>
-<p class="am-padding-left">
-	© 2018 <a href="#">山西农业大学北京海淀基地</a>. 作者:于斌
+<p class="am-padding-left">© 2020 <a href="#">山西大学商务学院</a>. 作者:解子扬
 </p>
 </br>
 </br>
 </br>
 </footer>
+
 </body>
 </html>

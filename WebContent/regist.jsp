@@ -215,7 +215,7 @@
 
  <footer style="text-align: center">
     <hr>
-<p class="am-padding-left">© 2018 <a href="#">山西大学商务学院</a>. 作者:解子扬</p>
+<p class="am-padding-left">© 2020 <a href="#">山西大学商务学院</a>. 作者:解子扬</p>
 </footer>
 
 

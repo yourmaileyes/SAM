@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sam.biz.MainBiz;
+import com.sam.entity.Comment;
+import com.sam.entity.Student;
 import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -68,6 +70,38 @@ public class MainController {
 		code co = new code();
 		co.drawImage(res.getOutputStream());
 		session.setAttribute("varcode", co.getCode());
+	}
+
+	@RequestMapping(value = "activity")
+	public String activity(int id,HttpSession session){
+		session.setAttribute("activity",mainBiz.activity(id));
+		session.setAttribute("comments",mainBiz.getComments(id));
+		Student student = (Student) session.getAttribute("loginUser");
+		if (student!=null)
+			session.setAttribute("isSelect",mainBiz.isSelect(student.getId(),id));
+		return "activity";
+	}
+
+	@RequestMapping(value = "subreview")
+	public String subreview(Comment comment, HttpSession session){
+		Student student = (Student) session.getAttribute("loginUser");
+		comment.setStudentid(student.getId());
+		comment.setUsername(student.getAccount());
+		return "redirect:activity.do?id="+comment.getActivityid();
+	}
+
+	@RequestMapping(value = "insertSign")
+	public void insertSign(int avtivityid,int userid, HttpServletResponse res) throws IOException {
+		mainBiz.insertSign(userid,avtivityid);
+		res.setCharacterEncoding("utf-8");
+		res.getWriter().write("报名成功！");
+	}
+
+	@RequestMapping(value = "deleteSign")
+	public void deleteSign(int avtivityid,int userid, HttpServletResponse res) throws IOException {
+		mainBiz.deleteSign(userid,avtivityid);
+		res.setCharacterEncoding("utf-8");
+		res.getWriter().write("true");
 	}
 
 	/*@RequestMapping(value = "usercheck") // ajax验证用户名是否使用
