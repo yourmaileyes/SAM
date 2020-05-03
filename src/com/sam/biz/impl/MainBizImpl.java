@@ -67,7 +67,10 @@ public class MainBizImpl implements MainBiz {
     public List<Comment> getComments(int activityId) {
         CommentExample commentExample = new CommentExample();
         commentExample.createCriteria().andActivityidEqualTo(activityId);
-        return commentMapper.selectByExample(commentExample);
+        List<Comment> comments = commentMapper.selectByExample(commentExample);
+        if (comments.size()==0)
+            return null;
+        return comments;
     }
 
     @Override
@@ -79,7 +82,7 @@ public class MainBizImpl implements MainBiz {
 
     @Override
     public void insertComment(Comment comment) {
-        commentMapper.insert(comment);
+        commentMapper.insertSelective(comment);
     }
 
     @Override
@@ -87,7 +90,7 @@ public class MainBizImpl implements MainBiz {
         Sign sign = new Sign();
         sign.setActivityid(activityid);
         sign.setStudentid(userid);
-        signMapper.insert(sign);
+        signMapper.insertSelective(sign);
     }
 
     @Override

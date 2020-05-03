@@ -20,7 +20,7 @@
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					<img alt="" src="images/title.png" onclick="window.location.href='index.do'"/>
+					<img alt="" src="images/title.png" onclick="window.location.href='index.do'" style="height:100px;width:150px"/>
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

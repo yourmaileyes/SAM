@@ -17,7 +17,7 @@
 								<ul class="nav nav-tabs">
 									<li class="active"><a href="#panel-623669"
 										data-toggle="tab">修改密码</a></li>
-									<li><a href="#panel-984445" data-toggle="tab">错题中心</a></li>
+									<%--<li><a href="#panel-984445" data-toggle="tab">错题中心</a></li>--%>
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane active" id="panel-623669">
@@ -154,7 +154,8 @@
 						url : "passwordcheck.do",
 						data : {
 							"username" : username,
-							"password" : opassword
+							"password" : opassword,
+							"type" : 1
 						},
 						async : false,
 						dataType : 'text',

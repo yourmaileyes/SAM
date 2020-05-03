@@ -14,6 +14,14 @@
 <link rel="stylesheet" type="text/css" href="css/home.css">
 <script type="text/javascript" src="js/banner.js"></script>
 <script type="text/javascript" src="js/ad.js"></script>
+    <link rel="stylesheet" href="css/amazeui.min.css">
+    <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/amazeui.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/course.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>大学艺术活动网站</title>
 <style type="text/css">
@@ -34,6 +42,7 @@ body {
 		<div class="col-md-12 column">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
+                    <center>
 					<div class="carousel slide" id="carousel-624135">
 						<ol class="carousel-indicators">
 							<li class="active" data-slide-to="0"
@@ -43,7 +52,7 @@ body {
 						</ol>
 						<div class="carousel-inner">
 							<div class="item active">
-								<img alt="" src="images/2.jpg" width="100%"
+								<img alt="" src="images/1.jpg" width="100%"
 									height="300px" />
 								<div class="carousel-caption">
 									<h4>
@@ -68,7 +77,7 @@ body {
 								</div>
 							</div>
 							<div class="item">
-								<img alt="" src="images/3.jpg" width="100%"
+								<img alt="" src="images/1.jpg" width="100%"
 									height="300px" />
 								<div class="carousel-caption">
 									<h4>
@@ -88,66 +97,72 @@ body {
 							data-slide="next"><span
 							class="glyphicon glyphicon-chevron-right"></span></a>
 					</div>
-					<div class="uc-course-list_content">
+                    </center>
+                    <div class="uc-course-list_content" >
 
-						<ul class="uc-course-list_ul">
-							<!--Regular list-->
-							<c:forEach var="course" items="${activities}" varStatus="status">
+                        <div class="container-fluid" style="padding-left: 0px">
+                            <div class="j-course-list"><div class="uc-course-list g-flow">
 
-								<li class="uc-course-list_itm f-ib">
-									<!--Regular if23-->
-									<div class="uc-coursecard uc-ykt-coursecard f-fl">
-										<a target="_blank" class="j-href" href="activity.do?id=${course.id}">
-											<div class="uc-ykt-coursecard-wrap f-cb f-pr">
-												<div class="uc-ykt-coursecard-wrap_box">
-													<div class="uc-ykt-coursecard-wrap_picbox f-pr">
-														<img class="imgPic j-img" src="<c:url value="images/${course.imgurl}?imageView&amp;thumbnail=223y124&amp;quality=100"/>" data-src="" alt="课程图片" >
-														<div class="m-showLectorTag f-pa" style="display: none;">老师参与</div>
-													</div>
-													<div class="uc-ykt-coursecard-wrap_tit">
-														<h3 class="">${course.name}</h3>
-													</div>
-													<div class="uc-ykt-coursecard-wrap_orgName f-fs0 f-thide">
-															${course.context}</div>
-													<div class="uc-ykt-coursecard-wrap_scorewrap f-thide f-cb f-pa">
-														<div class="m-scorecnt f-fl f-cb">
-															<div class="uc-starrating">
-															${course.number}人报名
-															</div>
-														</div>
-														<div class="m-hot f-fl">
-															<!--Regular if24-->
-															活动时间<fmt:formatDate value="${course.starttime}" pattern="yyyy-MM-dd"/>
-															-<fmt:formatDate value="${course.endtime}" pattern="yyyy-MM-dd"/>
+                                <ul class="uc-course-list_ul" style="padding:15px">
+                                    <!--Regular list-->
+                                    <c:forEach var="course" items="${activities}" varStatus="status">
 
-														</div>
-													</div>
-													<div class="uc-ykt-coursecard-wrap_price f-pa">
-														<!--Regular if25-->
-														<span class="u-free">
+                                        <li class="uc-course-list_itm f-ib">
+                                            <!--Regular if23-->
+                                            <div class="uc-coursecard uc-ykt-coursecard f-fl">
+                                                <a target="_blank" class="j-href" href="activity.do?id=${course.id}">
+                                                    <div class="uc-ykt-coursecard-wrap f-cb f-pr">
+                                                        <div class="uc-ykt-coursecard-wrap_box">
+                                                            <div class="uc-ykt-coursecard-wrap_picbox f-pr">
+                                                                <img class="imgPic j-img" src="<c:url value="images/${course.imgurl}?imageView&amp;thumbnail=223y124&amp;quality=100"/>" data-src="" alt="课程图片" >
+                                                                <div class="m-showLectorTag f-pa" style="display: none;">老师参与</div>
+                                                            </div>
+                                                            <div class="uc-ykt-coursecard-wrap_tit">
+                                                                <h3 class="">${course.name}</h3>
+                                                            </div>
+                                                            <div class="uc-ykt-coursecard-wrap_orgName f-fs0 f-thide">
+                                                                    ${course.context}</div>
+                                                            <div class="uc-ykt-coursecard-wrap_scorewrap f-thide f-cb f-pa">
+                                                                <div class="m-scorecnt f-fl f-cb">
+                                                                    <div class="uc-starrating">
+                                                                            ${course.number}人报名
+                                                                    </div>
+                                                                </div>
+                                                                <div class="m-hot f-fl">
+                                                                    <!--Regular if24-->
+                                                                    活动时间<fmt:formatDate value="${course.starttime}" pattern="yyyy-MM-dd"/>
+                                                                    至<fmt:formatDate value="${course.endtime}" pattern="yyyy-MM-dd"/>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="uc-ykt-coursecard-wrap_price f-pa">
+                                                                <!--Regular if25-->
+                                                                <span class="u-free">
 
 															<br><c:if test="${course.status==4 }">已结束</c:if>
 															</span>
 
-													</div>
-													<!--Regular if26-->
-												</div>
-											</div>
-										</a>
-									</div>
+                                                            </div>
+                                                            <!--Regular if26-->
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
 
-								</li>
-							</c:forEach>
-						</ul>
-						<!--Regular if22-->
-					</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<img alt="140x140" src="style/image/bottom.JPG" />
-		</div>
-	</div>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                                <!--Regular if22-->
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 <footer style="text-align: center">
 <hr>

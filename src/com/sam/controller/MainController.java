@@ -41,6 +41,14 @@ public class MainController {
 		}
 		session.removeAttribute("massage");
 		session.setAttribute("loginUser", loginUser);
+		switch (type){
+			case 1:
+				return "redirect:index.do";
+			case 2:
+				return "organ";
+			case 3:
+				return "admin";
+		}
 		return "redirect:index.do";
 	}
 

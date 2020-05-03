@@ -39,7 +39,7 @@ body {
 	<div class="g-flow f-cb">
 
 
-		<div class="f-bg courseheadbox" id="j-coursehead">
+		<div class="f-bg courseheadbox" id="j-coursehead" style="padding:10px">
 
 			<div class="u-courseHead" id="auto-id-1509947716498">
 
@@ -87,7 +87,7 @@ body {
 
 								<div class="btnarea f-pa j-chbtnarea">
 
-									<c:if test="${isSelect == false }">
+									<c:if test="${isSelect == false || isSelect==null}">
 										<a class="learnbtn f-db f-cb j-joinBtn"> <span>立即参加</span></a>
 									</c:if>
 									<c:if test="${isSelect == true }">
@@ -103,7 +103,7 @@ body {
 			</div>
 			<!-- 评论区 -->
 			<div
-					style="position: relative; border: 2px solid; border-radius: 5px; left: 23.5%; top: 20px; width: 1000px; padding: 10px;">
+					style="position: relative; border: 2px solid; border-radius: 5px; margin: 20px; width: 92%; width: 100%; padding:10px;">
 				<!-- 输入区 -->
 				<c:if test="${isSelect == true }">
 				<div
@@ -131,6 +131,9 @@ body {
 				</div>
 				</c:if>
 				<!-- 展示评论区 -->
+				<c:if test="${comments == null}">
+					暂时还没有评论。。。
+				</c:if>
 				<c:forEach var="review" items="${comments}" varStatus="status">
 					<div
 							style="position: relative; width: 955px; border: 2px solid; border-radius: 5px; margin: 10px;">
