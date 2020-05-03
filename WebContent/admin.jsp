@@ -21,34 +21,33 @@
 			<div class="panel-group" id="panel-144583">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-144583" href="#panel-element-33979">试题管理</a>
+						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-144583" href="#panel-element-33979">活动管理</a>
 					</div>
 					<div id="panel-element-33979" class="panel-collapse collapse in">
 						<div class="panel-body">
-							<a href="allexam.do" target="right">查看所有试题</a>
+							<a href="allexam.do" target="right">查看所有活动</a>
 						</div>
 						<div class="panel-body">
-							<a href="upexam.jsp" target="right">添加试题</a>
+							<a href="upa.jsp" target="right">新增活动</a>
 						</div>
 					</div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-144583" href="#panel-element-747659">测试管理</a>
+						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-144583" href="#panel-element-747659">用户管理</a>
 					</div>
 					<div id="panel-element-747659" class="panel-collapse collapse">
 						<div class="panel-body">
-							<a href="alltest.do" target="right">查看所有测试</a>
+							<a href="alltest.do" target="right">查看所有学生</a>
 						</div>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-144583" href="#panel-element-747650">查看留言</a>
-					</div>
-					<div id="panel-element-747650" class="panel-collapse collapse">
 						<div class="panel-body">
-							<a href="showmessage.do" target="right">查看留言</a>
+							<a href="alltest.do" target="right">查看所有组织者</a>
+						</div>
+						<div class="panel-body">
+							<a href="alltest.do" target="right">新增学生</a>
+						</div>
+						<div class="panel-body">
+							<a href="alltest.do" target="right">新增组织者</a>
 						</div>
 					</div>
 				</div>

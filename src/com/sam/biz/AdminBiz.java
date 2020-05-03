@@ -1,5 +1,6 @@
 package com.sam.biz;
 
+import com.sam.entity.Activity;
 import com.sam.entity.Admin;
 import com.sam.entity.AdminExample;
 import org.apache.ibatis.annotations.Param;
@@ -28,4 +29,11 @@ public interface AdminBiz {
     int updateByPrimaryKeySelective(Admin record);
 
     int updateByPrimaryKey(Admin record);
+
+    void aplActivity(int activityId);
+
+    void deleteActivity(int activityId);
+
+    void updateActivity(Activity activity);
+
 }

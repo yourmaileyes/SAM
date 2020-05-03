@@ -32,7 +32,7 @@
 						</c:if>
 						<c:if test="${loginUser!=null }">
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">欢迎您：${loginUser.username }<strong class="caret"></strong></a>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">欢迎您：${loginUser.account }<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
 									 <a href="info.do">个人中心</a>

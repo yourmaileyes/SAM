@@ -114,7 +114,7 @@
 	}
 	<!--实现动态改变页面进行改密操作 -->
 		function validatePassword() {
-			var username = $("#username").html();
+			var username = "${loginUser.account }";
 			var password = $("#exampleInputPassword").val();
 			var opassword = $("#oldpassword").val();
 			var cpassword = $("#exampleInputPassword1").val();

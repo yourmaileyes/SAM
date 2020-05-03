@@ -1,7 +1,9 @@
 package com.sam.biz.impl;
 
+import com.sam.entity.Activity;
 import com.sam.entity.Admin;
 import com.sam.entity.AdminExample;
+import com.sam.mapper.ActivityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,8 @@ import java.util.List;
 public class AdminBizImpl implements AdminBiz{
 	@Autowired
 	AdminMapper adminMapper;
+	@Autowired
+	ActivityMapper activityMapper;
 
 	@Override
 	public int countByExample(AdminExample example) {
@@ -68,5 +72,22 @@ public class AdminBizImpl implements AdminBiz{
 	@Override
 	public int updateByPrimaryKey(Admin record) {
 		return adminMapper.updateByPrimaryKey(record);
+	}
+
+	@Override
+	public void aplActivity(int activityId) {
+		Activity activity = activityMapper.selectByPrimaryKey(activityId);
+		activity.setStatus(1);
+		activityMapper.updateByPrimaryKeySelective(activity);
+	}
+
+	@Override
+	public void deleteActivity(int activityId) {
+		activityMapper.deleteByPrimaryKey(activityId);
+	}
+
+	@Override
+	public void updateActivity(Activity activity) {
+		activityMapper.updateByPrimaryKeySelective(activity);
 	}
 }

@@ -91,6 +91,9 @@ public class MainBizImpl implements MainBiz {
         sign.setActivityid(activityid);
         sign.setStudentid(userid);
         signMapper.insertSelective(sign);
+        Activity activity = activityMapper.selectByPrimaryKey(activityid);
+        activity.setNumber(activity.getNumber()+1);
+        activityMapper.updateByPrimaryKeySelective(activity);
     }
 
     @Override
@@ -98,6 +101,9 @@ public class MainBizImpl implements MainBiz {
         SignExample signExample = new SignExample();
         signExample.createCriteria().andStudentidEqualTo(userid).andActivityidEqualTo(activityid);
         signMapper.deleteByExample(signExample);
+        Activity activity = activityMapper.selectByPrimaryKey(activityid);
+        activity.setNumber(activity.getNumber()-1);
+        activityMapper.updateByPrimaryKeySelective(activity);
     }
 
 }

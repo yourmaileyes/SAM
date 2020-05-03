@@ -11,13 +11,7 @@
 <link rel="stylesheet" href="css/amazeui.min.css">
 <link rel="stylesheet" href="css/course.css">
 <link rel="stylesheet" href="css/admin.css">
-<script src="js/loginandregist.js"></script>
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/amazeui.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/jquery.min.js"></script>
-<script src="js/loginkuang.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/course.css">
 <title>活动详情</title>
 <!--[if lt IE 9]>  
@@ -103,7 +97,7 @@ body {
 			</div>
 			<!-- 评论区 -->
 			<div
-					style="position: relative; border: 2px solid; border-radius: 5px; margin: 20px; width: 92%; width: 100%; padding:10px;">
+					style="position: relative; border: 2px solid; border-radius: 5px; margin: 20px; width: 92%; padding:10px;">
 				<!-- 输入区 -->
 				<c:if test="${isSelect == true }">
 				<div
@@ -112,10 +106,10 @@ body {
 						<input type="hidden" name="activityid" value="${activity.id}">
 						<div
 								style="position: relative; height: 150px; width: 200px; padding: 20px;">
-							感觉活动怎么样？<br> <input type="radio" name="lable" value="1">一般<br>
-							<input type="radio" name="lable" value="2">还行<br> <input
-								type="radio" name="lable" value="3">不错<br> <input
-								type="radio" name="lable" value="4">非常好<br>
+							感觉活动怎么样？<br> <input type="radio" name="lable" value="一般">一般<br>
+							<input type="radio" name="lable" value="还行">还行<br> <input
+								type="radio" name="lable" value="不错">不错<br> <input
+								type="radio" name="lable" value="非常好">非常好<br>
 						</div>
 						<div
 								style="position: absolute; left: 250px; top: 10px; height: 150px; width: 500px;">
@@ -136,7 +130,7 @@ body {
 				</c:if>
 				<c:forEach var="review" items="${comments}" varStatus="status">
 					<div
-							style="position: relative; width: 955px; border: 2px solid; border-radius: 5px; margin: 10px;">
+							style="position: relative; border: 2px solid; border-radius: 5px; margin: 10px;">
 						<div
 								style="background-color:; position: relative; width: 200px; height: 100px; padding-left: 20px; padding-top: 10px;">
 
@@ -188,8 +182,8 @@ body {
 				type : "post",
 				url : "insertSign.do",
 				data : {
-					"avtivityid" : "${avtivity.id}",
-					"userid" : "${loginUser.id}"
+					"avtivityid" : ${activity.id},
+					"userid" : '${loginUser.id}'
 				},
 				async : false,
 				method : 'post',
@@ -213,8 +207,8 @@ body {
 				type : "post",
 				url : "deleteSign.do",
 				data : {
-					"avtivityid" : "${avtivity.id}",
-					"userid" : "${loginUser.id}"
+					"avtivityid" : ${activity.id},
+					"userid" : '${loginUser.id}'
 				},
 				async : true,
 				success : function(data) {

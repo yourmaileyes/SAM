@@ -8,19 +8,13 @@
 <head>
 <link href="favicon.ico" rel="icon" type="image/x-icon" />
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-<script src="js/jquery-3.2.1.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/base.css">
 <link rel="stylesheet" type="text/css" href="css/home.css">
-<script type="text/javascript" src="js/banner.js"></script>
-<script type="text/javascript" src="js/ad.js"></script>
     <link rel="stylesheet" href="css/amazeui.min.css">
     <link rel="stylesheet" href="css/course.css">
     <link rel="stylesheet" href="css/admin.css">
-    <script src="js/amazeui.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/course.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>大学艺术活动网站</title>
@@ -37,12 +31,11 @@ body {
 </style>
 </head>
 <%@include file="head.jsp"%>
-<div class="container" style="margin-top: 5%">
+<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
-                    <center>
 					<div class="carousel slide" id="carousel-624135">
 						<ol class="carousel-indicators">
 							<li class="active" data-slide-to="0"
@@ -52,40 +45,38 @@ body {
 						</ol>
 						<div class="carousel-inner">
 							<div class="item active">
-								<img alt="" src="images/1.jpg" width="100%"
-									height="300px" />
+								<img alt="" src="images/main1.jpg" width="100%"
+									height="200px" />
 								<div class="carousel-caption">
 									<h4>
-										<!-- First Thumbnail label -->
+										 学生大合唱
 									</h4>
 									<p>
-										<!-- Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. -->
+										山西大学商务学院“庆祝建国70周年暨2019年迎新生文艺晚会”主题晚会顺利举行
 									</p>
 								</div>
 							</div>
 							<div class="item">
-								<img alt="" src="images/1.jpg" width="100%"
+								<img alt="" src="images/main2.jpg" width="100%"
 									height="300px" />
 								<div class="carousel-caption">
 									<h4>
-										<!-- Second Thumbnail label -->
+										获奖演员上台领奖
 									</h4>
 									<p>
-										<!-- Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-									 -->
+										山西大学商务学院第十五届校园文化艺术节“我的中国梦”主题晚会顺利举行
 									</p>
 								</div>
 							</div>
 							<div class="item">
-								<img alt="" src="images/1.jpg" width="100%"
+								<img alt="" src="images/main3.jpg" width="100%"
 									height="300px" />
 								<div class="carousel-caption">
 									<h4>
-										<!-- Third Thumbnail label -->
+										演员们正在热情演出
 									</h4>
 									<p>
-										<!-- Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-									 -->
+										山西大学商务学院第十五届校园文化艺术节“我的中国梦”主题晚会顺利举行
 									</p>
 								</div>
 							</div>
@@ -97,7 +88,6 @@ body {
 							data-slide="next"><span
 							class="glyphicon glyphicon-chevron-right"></span></a>
 					</div>
-                    </center>
                     <div class="uc-course-list_content" >
 
                         <div class="container-fluid" style="padding-left: 0px">

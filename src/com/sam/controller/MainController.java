@@ -82,6 +82,7 @@ public class MainController {
 
 	@RequestMapping(value = "activity")
 	public String activity(int id,HttpSession session){
+		session.removeAttribute("emsg");
 		session.setAttribute("activity",mainBiz.activity(id));
 		session.setAttribute("comments",mainBiz.getComments(id));
 		Student student = (Student) session.getAttribute("loginUser");
@@ -95,6 +96,7 @@ public class MainController {
 		Student student = (Student) session.getAttribute("loginUser");
 		comment.setStudentid(student.getId());
 		comment.setUsername(student.getAccount());
+		mainBiz.insertComment(comment);
 		return "redirect:activity.do?id="+comment.getActivityid();
 	}
 

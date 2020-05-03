@@ -24,13 +24,19 @@
 				<thead>
 					<tr>
 						<th>
-							试题编号
+							活动编号
 						</th>
 						<th>
-							题目
+							活动名字
 						</th>
 						<th>
-							答案
+							活动图片
+						</th>
+						<th>
+							活动申请时间
+						</th>
+						<th>
+							状态
 						</th>
 						<th>
 							操作
@@ -38,18 +44,30 @@
 					</tr>
 				</thead>
 				<tbody>
-				 <c:forEach items="${examList }" var="exam">
+				 <c:forEach items="${activities }" var="exam">
 					<tr class="success">
 						<td>
 							${exam.id }
 						</td>
 						<td>
-							${exam.title }
+							${exam.name }
 						</td>
 						<td>
-							${exam.answer }
+							<img alt="" src="images/${exam.imgurl}" style="height:150px;width:150px"/>
 						</td>
 						<td>
+							<fmt:formatDate value="${activity.createtime}" pattern="yyyy-MM-dd"/>
+						</td>
+						<td>
+							<c:if test="${exam.status == 0}">待审核</c:if>
+							<c:if test="${exam.status == 1}">审核已通过</c:if>
+							<c:if test="${exam.status == 3}">活动已结束</c:if>
+						</td>
+						<td>
+							<c:if test="${exam.status == 0}">
+							<button onclick="deleteexam(id='${exam.id}')">审核通过</button>
+							</c:if>
+							<button onclick="deleteexam(id='${exam.id}')">编辑</button>
 							<button onclick="deleteexam(id='${exam.id}')">删除</button>
 						</td>
 					</tr>
