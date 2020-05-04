@@ -11,7 +11,17 @@ public class Student {
 
     private String department;
 
+    private String type;
+
     private Date createtime;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public Integer getId() {
         return id;

@@ -41,6 +41,13 @@ public class AdminController {
         response.getWriter().write("删除成功！");
     }
 
+    @RequestMapping(value = "uA")//活动新建导航
+    public String updateA(HttpSession session){
+        session.removeAttribute("emsg");
+        session.removeAttribute("activity");
+        return "upa";
+    }
+
     @RequestMapping(value = "updateA")//活动修改导航
     public String updateA(int id,HttpSession session){
         session.removeAttribute("emsg");

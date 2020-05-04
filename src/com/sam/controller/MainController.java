@@ -43,9 +43,8 @@ public class MainController {
 		session.setAttribute("loginUser", loginUser);
 		switch (type){
 			case "1":
-				return "redirect:index.do";
 			case "2":
-				return "organ";
+				return "redirect:index.do";
 			case "3":
 				return "admin";
 		}

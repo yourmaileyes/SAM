@@ -34,12 +34,19 @@
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">欢迎您：${loginUser.account }<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
+								<c:if test="${loginUser.type==null}">
 								<li>
 									 <a href="info.do">个人中心</a>
 								</li>
 								<li>
 									 <a href="mytest.do">我的报名</a>
 								</li>
+								</c:if>
+								<c:if test="${loginUser.type!=null}">
+								<li>
+									<a href="organinfo.do">管理中心</a>
+								</li>
+								</c:if>
 								
 								<li class="divider">
 								</li>

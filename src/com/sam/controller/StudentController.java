@@ -21,6 +21,7 @@ public class StudentController {
         if (loginUser == null) {
             return "login";
         }
+        session.removeAttribute("msg");
         return "info";
     }
 

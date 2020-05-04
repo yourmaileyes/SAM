@@ -4,6 +4,7 @@ package com.sam.biz.impl;
 import com.sam.biz.OrganBiz;
 import com.sam.entity.*;
 import com.sam.mapper.ActivityMapper;
+import com.sam.mapper.OrganMapper;
 import com.sam.mapper.SignMapper;
 import com.sam.mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ public class OrganBizImpl implements OrganBiz {
     ActivityMapper activityMapper;
     @Autowired
     StudentMapper studentMapper;
+    @Autowired
+    OrganMapper organMapper;
     @Override
     public List<Student> getStudnets(int activityId) {
         SignExample signExample = new SignExample();
@@ -38,5 +41,17 @@ public class OrganBizImpl implements OrganBiz {
         ActivityExample activityExample = new ActivityExample();
         activityExample.createCriteria().andLableEqualTo(String.valueOf(organId));
         return activityMapper.selectByExample(activityExample);
+    }
+
+    @Override
+    public void changepasswordOrgan(Organ organ) {
+        organMapper.updateByPrimaryKeySelective(organ);
+    }
+
+    @Override
+    public void deleteSign(int studentId, int activityId) {
+        SignExample signExample = new SignExample();
+        signExample.createCriteria().andActivityidEqualTo(activityId).andStudentidEqualTo(studentId);
+        signMapper.deleteByExample(signExample);
     }
 }
