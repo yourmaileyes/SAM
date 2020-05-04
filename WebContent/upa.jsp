@@ -24,7 +24,8 @@
 		<div class="col-md-2 column">
 		</div>
 		<div class="col-md-6 column">
-			<img src="images/${activity.imgurl}" alt="活动宣传图片" style="height:300px;width:300px">
+			<c:if test="${activity !=null}">
+			<img src="images/${activity.imgurl}" alt="活动宣传图片" style="height:300px;width:300px"></c:if>
 			<form role="form"  action="updateActivity.do" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="id" value="${activity.id}"/>
 				<div class="form-group">
@@ -59,7 +60,7 @@
 				<div class="form-group">
 					<label for="exampleInputFile">宣传图片</label><input type="file" name="file" id="exampleInputFile" />
 					<p class="help-block">
-						请上传少于10MB的图片.
+						请上传少于10MB的图片,确保文件名字不含空格和其他特殊字符.
 					</p>
 				</div>
 				<button type="submit" class="btn btn-default">提交</button>

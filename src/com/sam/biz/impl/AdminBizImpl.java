@@ -97,7 +97,7 @@ public class AdminBizImpl implements AdminBiz{
 	public void updateActivity(HttpServletRequest request) throws ParseException {
 		Activity activity = (Activity) UploadFile.uploadFile(request);
 		assert activity != null;
-		if (activity.getId()==0){
+		if (activity.getId()==null||activity.getId()==0){
 			activityMapper.insertSelective(activity);
 		}else {
 			activityMapper.updateByPrimaryKeySelective(activity);

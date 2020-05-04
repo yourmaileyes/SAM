@@ -113,13 +113,13 @@ public class UploadFile {
         if(pmap.get("filename")!=null&&!pmap.get("filename").equals("")) {
             activity.setImgurl(pmap.get("filename"));
         }
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         activity.setName(pmap.get("name"));
         activity.setContext(pmap.get("context"));
         activity.setResult(pmap.get("result"));
         activity.setStarttime(sdf.parse(pmap.get("starttime")));
         activity.setEndtime(sdf.parse(pmap.get("endtime")));
-        activity.setStatus(1);
+        activity.setStatus(0);
         return activity;
     }
 }

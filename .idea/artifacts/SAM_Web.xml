@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SAM:Web">
+    <output-path>$PROJECT_DIR$/classes/artifacts/SAM_Web</output-path>
+    <root id="archive" name="SAM_Web.war">
+      <element id="artifact" artifact-name="SAM:Web exploded" />
+    </root>
+  </artifact>
+</component>
