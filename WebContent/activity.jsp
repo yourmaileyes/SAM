@@ -41,8 +41,14 @@ body {
 
 
 					<div class="g-sd1 left j-chimg">
-						<img width="450" height="250"
-							src="<c:url value="images/${activity.imgurl}?imageView&amp;thumbnail=450y250&amp;quality=100"/>">
+						<c:if test="${activity.imgurl eq ''}">
+							<img width="450" height="250"
+								 src="<c:url value="images/activity.jpg?imageView&amp;thumbnail=450y250&amp;quality=100"/>">
+						</c:if>
+						<c:if test="${activity.imgurl ne ''}">
+							<img width="450" height="250"
+								 src="<c:url value="images/${activity.imgurl}?imageView&amp;thumbnail=450y250&amp;quality=100"/>">
+						</c:if>
 					</div>
 
 					<div class="g-mn1">

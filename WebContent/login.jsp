@@ -95,6 +95,7 @@
 			var username = $("#username").val();
 			var password = $("#password").val();
 			var varcode = $("#varcode").val();
+			var type = $("#type").val();
 			var isok = true;
 			/* 判断用户名密码是否为空 */
 			if (username == "") {
@@ -142,7 +143,7 @@
 							data : {
 								"username" : username,
 								"password" : password,
-								"type" : 1
+								"type" : type
 							},
 							async : false,
 							dataType : 'text',

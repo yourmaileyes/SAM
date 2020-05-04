@@ -6,7 +6,7 @@ import com.sam.entity.Comment;
 import java.util.List;
 
 public interface MainBiz {
-    Object longin(String username,String password,int type);
+    Object longin(String username,String password,String type);
     List<Activity> activities();
     Activity activity(int id);
     List<Comment> getComments(int activityId);

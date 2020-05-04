@@ -33,7 +33,7 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "login") // 登录
-	public String login(String username, String password, int type, HttpSession session) {
+	public String login(String username, String password, String type, HttpSession session) {
 		Object loginUser = mainBiz.longin(username,password,type);
 		if (loginUser==null){
 			session.setAttribute("massage","用户名或密码错误！");
@@ -42,18 +42,18 @@ public class MainController {
 		session.removeAttribute("massage");
 		session.setAttribute("loginUser", loginUser);
 		switch (type){
-			case 1:
+			case "1":
 				return "redirect:index.do";
-			case 2:
+			case "2":
 				return "organ";
-			case 3:
+			case "3":
 				return "admin";
 		}
 		return "redirect:index.do";
 	}
 
 	@RequestMapping(value = "passwordcheck") // ajax登录验证密码
-	public void passwordcheck(String username,String password,int type,HttpSession session, HttpServletResponse res) throws IOException {
+	public void passwordcheck(String username,String password,String type,HttpSession session, HttpServletResponse res) throws IOException {
 		res.setCharacterEncoding("utf-8");
 		if (mainBiz.longin(username,password,type) == null) {
 			res.getWriter().write("0");

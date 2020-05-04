@@ -24,29 +24,33 @@ public class MainBizImpl implements MainBiz {
     @Autowired
     SignMapper signMapper;
     @Override
-    public Object longin(String username, String password, int type) {
+    public Object longin(String username, String password, String type) {
         switch (type){
-            case 1://学生登录
+            case "1"://学生登录
                 StudentExample studentExample = new StudentExample();
                 studentExample.createCriteria().andAccountEqualTo(username).andPasswordEqualTo(password);
-                if (studentMapper.selectByExample(studentExample).isEmpty())
+                if (studentMapper.selectByExample(studentExample).isEmpty()) {
                     return null;
+                }
                 else
                     return studentMapper.selectByExample(studentExample).get(0);
-            case 2://组织者登录
+            case "2"://组织者登录
                 OrganExample organExample = new OrganExample();
                 organExample.createCriteria().andAccountEqualTo(username).andPasswordEqualTo(password);
-                if (organMapper.selectByExample(organExample).isEmpty())
+                if (organMapper.selectByExample(organExample).isEmpty()) {
                     return null;
+                }
                 else
                     return organMapper.selectByExample(organExample).get(0);
-            case 3://管理员登录
+            case "3"://管理员登录
                 AdminExample adminExample = new AdminExample();
                 adminExample.createCriteria().andAccountEqualTo(username).andPasswordEqualTo(password);
-                if (adminMapper.selectByExample(adminExample).isEmpty())
+                if (adminMapper.selectByExample(adminExample).isEmpty()) {
                     return null;
-                else
+                }
+                else{
                     return adminMapper.selectByExample(adminExample).get(0);
+                }
         }
         return null;
     }

@@ -130,6 +130,9 @@
       <if test="studentid != null" >
         studentid,
       </if>
+      <if test="username != null" >
+        studentid,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -149,6 +152,9 @@
       </if>
       <if test="studentid != null" >
         #{studentid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>

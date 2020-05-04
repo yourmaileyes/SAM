@@ -16,7 +16,8 @@
 </head>
 <body>
 <div class="container">
-	<div class="row clearfix" style="margin-top: 100px">
+	<center><h1>SAM后台管理页面</h1><p>欢迎管理员:${loginUser.account}</p></center>
+	<div class="row clearfix" style="margin-top: 20px">
 		<div class="col-md-2 column">
 			<div class="panel-group" id="panel-144583">
 				<div class="panel panel-default">
@@ -25,7 +26,7 @@
 					</div>
 					<div id="panel-element-33979" class="panel-collapse collapse in">
 						<div class="panel-body">
-							<a href="allexam.do" target="right">查看所有活动</a>
+							<a href="allActivity.do" target="right">查看所有活动</a>
 						</div>
 						<div class="panel-body">
 							<a href="upa.jsp" target="right">新增活动</a>
@@ -38,16 +39,16 @@
 					</div>
 					<div id="panel-element-747659" class="panel-collapse collapse">
 						<div class="panel-body">
-							<a href="alltest.do" target="right">查看所有学生</a>
+							<a href="allStudent.do" target="right">查看所有学生</a>
 						</div>
 						<div class="panel-body">
-							<a href="alltest.do" target="right">查看所有组织者</a>
+							<a href="allOrgan.do" target="right">查看所有组织者</a>
 						</div>
 						<div class="panel-body">
-							<a href="alltest.do" target="right">新增学生</a>
+							<a href="student.jsp" target="right">新增学生</a>
 						</div>
 						<div class="panel-body">
-							<a href="alltest.do" target="right">新增组织者</a>
+							<a href="organ.jsp" target="right">新增组织者</a>
 						</div>
 					</div>
 				</div>
@@ -64,7 +65,7 @@
 			</div>
 		</div>
 		<div class="col-md-10 column">
-		     <iframe style="border: 0px;" name="right" width="1000" height="800"></iframe>
+		     <iframe style="border: 0px;" name="right" width="1000" height="800" src="allActivity.do"></iframe>
 		</div>
 	</div>
 </div>

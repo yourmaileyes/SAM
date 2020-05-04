@@ -1,15 +1,18 @@
 package com.sam.biz.impl;
 
-import com.sam.entity.Activity;
-import com.sam.entity.Admin;
-import com.sam.entity.AdminExample;
+import com.sam.entity.*;
 import com.sam.mapper.ActivityMapper;
+import com.sam.mapper.OrganMapper;
+import com.sam.mapper.StudentMapper;
+import com.sam.util.UploadFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sam.biz.AdminBiz;
 import com.sam.mapper.AdminMapper;
 
+import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
 import java.util.List;
 
 @Service(value="AdminBiz")
@@ -18,6 +21,10 @@ public class AdminBizImpl implements AdminBiz{
 	AdminMapper adminMapper;
 	@Autowired
 	ActivityMapper activityMapper;
+	@Autowired
+	StudentMapper studentMapper;
+	@Autowired
+	OrganMapper organMapper;
 
 	@Override
 	public int countByExample(AdminExample example) {
@@ -87,7 +94,64 @@ public class AdminBizImpl implements AdminBiz{
 	}
 
 	@Override
-	public void updateActivity(Activity activity) {
-		activityMapper.updateByPrimaryKeySelective(activity);
+	public void updateActivity(HttpServletRequest request) throws ParseException {
+		Activity activity = (Activity) UploadFile.uploadFile(request);
+		assert activity != null;
+		if (activity.getId()==0){
+			activityMapper.insertSelective(activity);
+		}else {
+			activityMapper.updateByPrimaryKeySelective(activity);
+		}
+	}
+
+	@Override
+	public List<Activity> getActivities() {
+		return activityMapper.selectByExample(new ActivityExample());
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		return studentMapper.selectByExample(new StudentExample());
+	}
+
+	@Override
+	public Student getStudent(int id) {
+		return studentMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public void deleteStudent(int id) {
+		studentMapper.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public void updateStudent(Student student) {
+		if (student.getId()==null||student.getId()==0)
+			studentMapper.insertSelective(student);
+		else
+			studentMapper.updateByPrimaryKeySelective(student);
+	}
+
+	@Override
+	public List<Organ> getOrgan() {
+		return organMapper.selectByExample(new OrganExample());
+	}
+
+	@Override
+	public Organ getOrgan(int id) {
+		return organMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public void deleteOrgan(int id) {
+		organMapper.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public void updateOrgan(Organ organ) {
+		if (organ.getId()==null||organ.getId()==0)
+			organMapper.insertSelective(organ);
+		else
+			organMapper.updateByPrimaryKeySelective(organ);
 	}
 }

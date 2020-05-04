@@ -56,7 +56,7 @@
 							<img alt="" src="images/${exam.imgurl}" style="height:150px;width:150px"/>
 						</td>
 						<td>
-							<fmt:formatDate value="${activity.createtime}" pattern="yyyy-MM-dd"/>
+							<fmt:formatDate value="${exam.createtime}" pattern="yyyy-MM-dd HH:mm:ss"/>
 						</td>
 						<td>
 							<c:if test="${exam.status == 0}">待审核</c:if>
@@ -65,9 +65,9 @@
 						</td>
 						<td>
 							<c:if test="${exam.status == 0}">
-							<button onclick="deleteexam(id='${exam.id}')">审核通过</button>
+							<button onclick="aplActivity('${exam.id}','${exam.name}')">审核通过</button>
 							</c:if>
-							<button onclick="deleteexam(id='${exam.id}')">编辑</button>
+							<button onclick="window.location.href='updateA.do?id=${exam.id}'">编辑</button>
 							<button onclick="deleteexam(id='${exam.id}')">删除</button>
 						</td>
 					</tr>
@@ -78,14 +78,36 @@
 	</div>
 </div>
 <script type="text/javascript">
+	function aplActivity(id,name) {
+		var r=confirm("确认要审核通过活动："+name+"?");
+		if (r==true){
+			$.ajax({
+				type : "post",
+				url : "aplActivity.do",
+				data : {
+					"id" : id
+				},
+				async : true,
+				dataType : 'text',
+				success : function(data) {
+					alert(data);
+					location.reload(true);
+				},
+				error : function(data) {
+					alert("出错！请联系管理员" + data);
+					isok = false;
+				}
+			});
+		}
+	}
 function deleteexam(id){
-	var r=confirm("确认要删除试题："+id+"?");
+	var r=confirm("确认要删除活动："+id+"?");
 	if (r==true){
 		$.ajax({
 			type : "post",
-			url : "removeexam.do",
+			url : "deleteActivity.do",
 			data : {
-				"examid" : id
+				"id" : id
 			},
 			async : true,
 			dataType : 'text',

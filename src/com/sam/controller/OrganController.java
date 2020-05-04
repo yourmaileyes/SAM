@@ -1,5 +1,9 @@
 package com.sam.controller;
 
+import com.sam.biz.OrganBiz;
+import com.sam.entity.Activity;
+import com.sam.entity.Organ;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -9,22 +13,22 @@ import java.util.List;
 
 @Controller
 public class OrganController {
-   /* @RequestMapping(value = "info") // 个人中心
-    public String info(HttpSession session) {
-        User loginUser = (User) session.getAttribute("loginUser");
-        if (loginUser == null) {
+    @Autowired
+    OrganBiz organBiz;
+
+    @RequestMapping(value = "myActivity")
+    public String myActivity(HttpSession session){
+        Organ organ = (Organ) session.getAttribute("loginUser");
+        if (organ==null){
             return "login";
         }
-        List<Answer> answerList = answerBiz.selectbyuserid(loginUser.getId());
-        session.removeAttribute("msg");
-        session.setAttribute("answerList", answerList);
-        return "info";
+        session.setAttribute("myActivity",organBiz.getMyActiities(organ.getId()));
+        return "";
     }
 
-    @RequestMapping(value = "changepassword") // 修改密码
-    public String changepassword(User user, HttpSession session) {
-        userBiz.updateByPrimaryKeySelective(user);
-        session.setAttribute("msg", "修改成功！");
-        return "info";
-    }*/
+    @RequestMapping(value = "getAS")
+    public String getAS(int id,HttpSession session){
+        session.setAttribute("AS",organBiz.getStudnets(id));
+        return "";
+    }
 }

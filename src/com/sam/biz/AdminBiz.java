@@ -1,10 +1,10 @@
 package com.sam.biz;
 
-import com.sam.entity.Activity;
-import com.sam.entity.Admin;
-import com.sam.entity.AdminExample;
+import com.sam.entity.*;
 import org.apache.ibatis.annotations.Param;
 
+import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
 import java.util.List;
 
 public interface AdminBiz {
@@ -34,6 +34,24 @@ public interface AdminBiz {
 
     void deleteActivity(int activityId);
 
-    void updateActivity(Activity activity);
+    void updateActivity(HttpServletRequest request) throws ParseException;
+
+    List<Activity> getActivities();
+
+    List<Student> getStudents();
+
+    Student getStudent(int id);
+
+    void deleteStudent(int id);
+
+    void updateStudent(Student student);
+
+    List<Organ> getOrgan();
+
+    Organ getOrgan(int id);
+
+    void deleteOrgan(int id);
+
+    void updateOrgan(Organ organ);
 
 }

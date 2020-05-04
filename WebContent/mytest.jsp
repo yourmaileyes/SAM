@@ -30,8 +30,14 @@
 									<div class="uc-ykt-coursecard-wrap f-cb f-pr">
 										<div class="uc-ykt-coursecard-wrap_box">
 											<div class="uc-ykt-coursecard-wrap_picbox f-pr">
-												<img class="imgPic j-img" src="<c:url value="images/${course.imgurl}?imageView&amp;thumbnail=223y124&amp;quality=100"/>" data-src="" alt="课程图片" >
-												<div class="m-showLectorTag f-pa" style="display: none;">老师参与</div>
+												<c:if test="${course.imgurl eq ''}">
+													<img width="450" height="250"
+														 src="<c:url value="images/activity.jpg?imageView&amp;thumbnail=450y250&amp;quality=100"/>">
+												</c:if>
+												<c:if test="${course.imgurl ne ''}">
+													<img width="450" height="250"
+														 src="<c:url value="images/${course.imgurl}?imageView&amp;thumbnail=450y250&amp;quality=100"/>">
+												</c:if><div class="m-showLectorTag f-pa" style="display: none;">老师参与</div>
 											</div>
 											<div class="uc-ykt-coursecard-wrap_tit">
 												<h3 class="">${course.name}</h3>
