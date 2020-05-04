@@ -25,6 +25,7 @@ public class AdminController {
     @RequestMapping(value = "allActivity")
     public String allActivity(HttpSession session){
         session.setAttribute("activities",adminBiz.getActivities());
+        session.removeAttribute("activity");
         return "allexam";
     }
     @RequestMapping(value = "aplActivity")//审批活动

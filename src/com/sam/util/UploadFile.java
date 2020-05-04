@@ -117,7 +117,7 @@ public class UploadFile {
         activity.setName(pmap.get("name"));
         activity.setContext(pmap.get("context"));
         activity.setResult(pmap.get("result"));
-        activity.setStarttime(sdf.parse(pmap.get("startime")));
+        activity.setStarttime(sdf.parse(pmap.get("starttime")));
         activity.setEndtime(sdf.parse(pmap.get("endtime")));
         activity.setStatus(1);
         return activity;

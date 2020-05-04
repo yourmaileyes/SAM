@@ -53,5 +53,8 @@ public class OrganBizImpl implements OrganBiz {
         SignExample signExample = new SignExample();
         signExample.createCriteria().andActivityidEqualTo(activityId).andStudentidEqualTo(studentId);
         signMapper.deleteByExample(signExample);
+        Activity activity = activityMapper.selectByPrimaryKey(activityId);
+        activity.setNumber(activity.getNumber()-1);
+        activityMapper.updateByPrimaryKeySelective(activity);
     }
 }
