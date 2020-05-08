@@ -100,7 +100,7 @@ body {
                                         <li class="uc-course-list_itm f-ib">
                                             <!--Regular if23-->
                                             <div class="uc-coursecard uc-ykt-coursecard f-fl">
-                                                <a target="_blank" class="j-href" href="activity.do?id=${course.id}">
+                                                <a target="_blank" class="j-href" href="activity.do?id=${course.id}&userId=${loginUser.id}">
                                                     <div class="uc-ykt-coursecard-wrap f-cb f-pr">
                                                         <div class="uc-ykt-coursecard-wrap_box">
                                                             <div class="uc-ykt-coursecard-wrap_picbox f-pr">

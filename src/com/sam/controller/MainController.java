@@ -80,13 +80,12 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "activity")
-	public String activity(int id,HttpSession session){
+	public String activity(int id,int userId,HttpSession session){
 		session.removeAttribute("emsg");
 		session.setAttribute("activity",mainBiz.activity(id));
 		session.setAttribute("comments",mainBiz.getComments(id));
-		Student student = (Student) session.getAttribute("loginUser");
-		if (student!=null)
-			session.setAttribute("isSelect",mainBiz.isSelect(student.getId(),id));
+		if (userId!=0)
+			session.setAttribute("isSelect",mainBiz.isSelect(userId,id));
 		return "activity";
 	}
 
