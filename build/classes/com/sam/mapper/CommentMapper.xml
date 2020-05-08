@@ -131,7 +131,7 @@
         studentid,
       </if>
       <if test="username != null" >
-        studentid,
+        username,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
